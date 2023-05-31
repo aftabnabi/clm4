@@ -1,0 +1,14 @@
+[
+  {
+    "type": "overnight",
+    "price": 25.99
+  },
+  {
+    "type": "2-day",
+    "price": 9.99
+  },
+  {
+    "type": "postal",
+    "price": 2.99
+  }
+]
