@@ -1,4 +1,10 @@
-<p *ngIf="products && products.length && products[0].price > 700">
+<ng-container *ngFor="let product of products">
+  <p *ngIf="product.price > 700">
+    The price of the product is greater than 700.
+  </p>
+</ng-container>
 
-  <button type="button" (click)="notification.emit()">Notify me</button>
-</p>
+
+
+
+<button type="button" (click)="notification.emit()">Notify me</button>

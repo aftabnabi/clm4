@@ -1,5 +1,6 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
-import { Product } from '../products';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Product, ProductService } from '../products.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-product-alerts',
@@ -7,12 +8,20 @@ import { Product } from '../products';
   styleUrls: ['./product-alerts.component.css']
 })
 export class ProductAlertsComponent {
-  @Input() products: any;
+  @Input() products: Product[] | undefined;
   @Output() notification: EventEmitter<any> = new EventEmitter();
-  constructor() {
-    alert("Product");
+
+  constructor(private productsService: ProductService) { }
+
+  ngOnInit() {
+    if (this.products) {
+      if (this.products[0].price > 700) {
+        this.notification.emit('Product price is greater than 700');
+      }
+    }
   }
-  notifyme() {
-    alert("notified");
+
+  notifyMe() {
+    alert('Notified');
   }
 }

@@ -11,43 +11,57 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 import { CartComponent } from './cart/cart.component';
 import { ShippingComponent } from './shipping/shipping.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
-    AppComponent, ProductListComponent, TopbarComponent, ProductAlertsComponent, ProductDetailsComponent, CartComponent, ShippingComponent
+    AppComponent, HomeComponent, ProductListComponent, TopbarComponent, ProductAlertsComponent, ProductDetailsComponent, CartComponent, ShippingComponent, HomeComponent
   ],
   imports: [
-    BrowserModule, HttpClientModule, ReactiveFormsModule,
-    RouterModule.forRoot([
-      {
-          path: '', component: ProductListComponent 
-      },
+  BrowserModule,
+  HttpClientModule,
+  ReactiveFormsModule,
+  RouterModule.forRoot([
+    {
+      path: '',
+      redirectTo: 'home',
+      pathMatch: 'full'
+    },
+    {
+      path: 'home',
+      component: HomeComponent
+    },
+    {
+      path: 'product-list',
+      component: ProductListComponent
+    },
+    {
+      path: 'top-bar',
+      component: TopbarComponent
+    },
+    {
+      path: 'product-alerts',
+      component: ProductAlertsComponent
+    },
+    {
+      path: 'products/:productId',
+      component: ProductDetailsComponent
+    },
+    {
+      path: 'cart',
+      component: CartComponent
+    },
+    {
+      path: 'shipping',
+      component: ShippingComponent
+    },
+    {
+      path: '**',
+      redirectTo: 'product-list'
+    }
+  ])
+],
 
-      {
-        path: 'product-list',
-        component: ProductListComponent
-      },
-      {
-        path: 'top-bar',
-        component: TopbarComponent
-      },
-      {
-        path: 'product-alerts',
-        component: ProductAlertsComponent
-      },
-      {
-        path: 'products/:productId',
-        component: ProductDetailsComponent
-      },
-      {
-        path: 'cart',
-        component: CartComponent
-      },
-      {
-        path: 'shipping',
-        component: ShippingComponent
-      }
-  ])],
   providers: [],
   bootstrap: [AppComponent]
 })

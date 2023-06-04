@@ -1,19 +1,32 @@
-import { Component } from '@angular/core';
-import { products } from '../products';
+import { Component, OnInit } from '@angular/core';
+import { ProductService, Product } from '../products.service';
+import { Observable } from 'rxjs';
+
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.css']
 })
-export class ProductListComponent {
-  constructor() {
-    console.log("called the construt of productlist");
+export class ProductListComponent implements OnInit {
+  products$: Observable<Product[]> | undefined;
+
+  constructor(private productService: ProductService) { }
+
+  ngOnInit() {
+    this.products$ =  this.productService.getProducts();/*.subscribe((products: Product[]) => {
+       console.log(products);
+    }, (err: Error) => {
+      console.error(err);
+    });*/
   }
-  products = [...products];
+     
+  
+
   share() {
-    window.alert("product has been shared");
+    window.alert('Product has been shared');
   }
+
   notify() {
-    alert("notified");
+    alert('Notified');
   }
 }
