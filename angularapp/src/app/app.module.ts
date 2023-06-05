@@ -10,17 +10,24 @@ import { ProductAlertsComponent } from './product-alerts/product-alerts.componen
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { CartComponent } from './cart/cart.component';
 import { ShippingComponent } from './shipping/shipping.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
+import { CreateProductComponent } from './create-product/create-product.component';
+import { UpdateProductComponent } from './update-product/update-product.component';
+import { DeleteProductComponent } from './delete-product/delete-product.component';
 
 @NgModule({
   declarations: [
-    AppComponent, HomeComponent, ProductListComponent, TopbarComponent, ProductAlertsComponent, ProductDetailsComponent, CartComponent, ShippingComponent, HomeComponent
+    AppComponent, HomeComponent, ProductListComponent, TopbarComponent, ProductAlertsComponent,
+    ProductDetailsComponent, CartComponent, ShippingComponent, HomeComponent, CreateProductComponent,
+    UpdateProductComponent,
+    DeleteProductComponent
   ],
   imports: [
   BrowserModule,
   HttpClientModule,
-  ReactiveFormsModule,
+    ReactiveFormsModule,
+  FormsModule,
   RouterModule.forRoot([
     {
       path: '',
@@ -54,6 +61,10 @@ import { HomeComponent } from './home/home.component';
     {
       path: 'shipping',
       component: ShippingComponent
+    },
+    {
+      path: 'update-product/:Id',
+      component: UpdateProductComponent
     },
     {
       path: '**',
