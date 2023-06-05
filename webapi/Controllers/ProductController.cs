@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using webapi.Models;
 
 namespace webapi.Controllers
@@ -49,5 +50,61 @@ namespace webapi.Controllers
 
             return productDto;
         }
+        // POST: api/products
+        [HttpPost]
+        public ActionResult<Product> CreateProduct(Product product)
+        {
+            var productDto = new webapi.Models.Product
+            {
+                Id = product.Id,
+                Name = product.Name,
+                Price = product.Price,
+                Description = product.Description
+            };
+
+            _context.Product.Add(productDto);
+            _context.SaveChanges(); // Save changes to the database
+
+            return CreatedAtAction(nameof(GetProduct), new { id = product.Id }, product);
+        }
+
+        // PUT: api/products/{id}
+        [HttpPut("{id}")]
+        public IActionResult UpdateProduct(int id, Product product)
+        {
+            //if (id != product.Id)
+            //{
+            //    return BadRequest(); // Return 400 Bad Request if the provided ID does not match the product ID
+            //}
+            var productDto = new webapi.Models.Product
+            {
+                Id = id,
+                Name = product.Name,
+                Price = product.Price,
+                Description = product.Description
+            };
+            _context.Entry(productDto).State = EntityState.Modified;
+            _context.SaveChanges();
+
+            return NoContent();
+        }
+
+        // DELETE: api/products/{id}
+        [HttpDelete("{id}")]
+        public IActionResult DeleteProduct(int id)
+        {
+            var product = _context.Product.FirstOrDefault(p => p.Id == id);
+
+            if (product == null)
+            {
+                return NotFound(); // Return 404 Not Found if the product is not found
+            }
+
+            _context.Product.Remove(product);
+            _context.SaveChanges();
+
+            return NoContent();
+        }
+
     }
 }

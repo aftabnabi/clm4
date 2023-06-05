@@ -1,7 +1,9 @@
 <h1>Products</h1>
+<p>{{ message }}</p>
 <div *ngIf="products$ | async as products">
   <div *ngFor="let product of products; index as productId">
     <span>{{ productId + 1 }}</span>
+    <span>original id {{product.id}}</span>
     <h3>
       <a [title]="product.name + ' details'" [routerLink]="['/products', productId + 1]">
         {{ product.name }}
@@ -14,10 +16,16 @@
 
     <button (click)="share()">
       Share
-    </button>
-  </div>
+    </button> update
+    <a [title]="product.name + ' details'" [routerLink]="['/update-product', product.id]">
+      edit it
+    </a>
+    <app-delete-product [productId]="product.id" [message]="message" (productDeleted)="reloadProducts()">delete</app-delete-product>
 
+  </div>
+ 
   <ng-container *ngFor="let product of products">
     <app-product-alerts [products]="products"></app-product-alerts>
   </ng-container>
+
 </div>

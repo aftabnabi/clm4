@@ -9,15 +9,12 @@ import { Observable } from 'rxjs';
 })
 export class ProductListComponent implements OnInit {
   products$: Observable<Product[]> | undefined;
+  message: string = '';
 
   constructor(private productService: ProductService) { }
 
   ngOnInit() {
-    this.products$ =  this.productService.getProducts();/*.subscribe((products: Product[]) => {
-       console.log(products);
-    }, (err: Error) => {
-      console.error(err);
-    });*/
+    this.products$ =  this.productService.getProducts();
   }
      
   
@@ -29,4 +26,12 @@ export class ProductListComponent implements OnInit {
   notify() {
     alert('Notified');
   }
+  reloadProducts(): void {
+    this.products$ = this.productService.getProducts();
+    this.message = 'Product has been deleted.';
+  }
+  handleProductDeleted(message: string): void {
+    this.message = message;
+  }
+
 }
