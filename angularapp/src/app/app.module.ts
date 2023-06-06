@@ -15,6 +15,7 @@ import { HomeComponent } from './home/home.component';
 import { CreateProductComponent } from './create-product/create-product.component';
 import { UpdateProductComponent } from './update-product/update-product.component';
 import { DeleteProductComponent } from './delete-product/delete-product.component';
+import { MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -27,8 +28,8 @@ import { DeleteProductComponent } from './delete-product/delete-product.componen
   BrowserModule,
   HttpClientModule,
     ReactiveFormsModule,
-  FormsModule,
-  RouterModule.forRoot([
+    FormsModule, MatButtonModule, 
+    RouterModule.forRoot([
     {
       path: '',
       redirectTo: 'home',

@@ -2,20 +2,21 @@
 
 <a routerLink="/shipping" >Shipping Prices</a>
 
-<div class="cart-item" *ngFor="let item of items">
+<div mat- class="cart-item" *ngFor="let item of items">
   <span>{{item.name}}</span>
   <span>{{item.price | currency}}</span>
 </div>
 
 <form [formGroup]="checkoutForm" ngSubmit="onSubmit()">
-  <div formGroupName="name">
-    <label for="name"></label>
-    <input id="name" type="text" formControlName="name" placeholder="name"/>
-  </div>
-  <div formGroupName="address">
-    <label for="address"></label>
-    <input id="address" type="text" formControlName="address" placeholder="Address"/>
-  </div>
+
+    <div formGroupName="name">
+      <label for="name"></label>
+      <input id="name" type="text" formControlName="name" placeholder="name" />
+    </div>
+    <div formGroupName="address">
+      <label for="address"></label>
+      <input id="address" type="text" formControlName="address" placeholder="Address" />
+    </div>
   
-  <button type="submit" class="button">Purchase</button>
+      <button mat-raised-button type="submit" class="button">Purchase</button>
 </form>
