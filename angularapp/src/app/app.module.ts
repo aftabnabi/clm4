@@ -16,6 +16,8 @@ import { CreateProductComponent } from './create-product/create-product.componen
 import { UpdateProductComponent } from './update-product/update-product.component';
 import { DeleteProductComponent } from './delete-product/delete-product.component';
 import { MatButtonModule} from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+
 
 @NgModule({
   declarations: [
@@ -26,7 +28,7 @@ import { MatButtonModule} from '@angular/material/button';
   ],
   imports: [
   BrowserModule,
-  HttpClientModule,
+  HttpClientModule,MatCardModule,
     ReactiveFormsModule,
     FormsModule, MatButtonModule, 
     RouterModule.forRoot([
