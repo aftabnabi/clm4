@@ -24,12 +24,13 @@ export class UpdateProductComponent implements OnInit {
     this.productId = this.route.snapshot.params['Id'];
     this.productForm = this.formBuilder.group({
       name: ['', Validators.required],
-      price: ['', Validators.required],
+      UnitPrice: ['', Validators.required],
       description: ['', Validators.required]
     });
 
     this.productService.getProduct(this.productId).subscribe(
       (product) => {
+        console.log(product);
         this.productForm.patchValue(product);
       },
       (error) => {

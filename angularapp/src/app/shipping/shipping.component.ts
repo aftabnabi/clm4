@@ -11,12 +11,12 @@ import { Observable } from 'rxjs';
 })
 export class ShippingComponent implements OnInit {
 
-  shippingCost!: Observable<{ type: string,price: number }[]>;
+  shippingCost!: Observable<{ type: string,unitPrice: number }[]>;
   constructor(private cartService: CartService) {
 
   }
     ngOnInit(): void {
-      this.shippingCost = this.cartService.getShippingPrices();
+      this.shippingCost = this.cartService.getShippingUnitPrices();
     }
 
 }

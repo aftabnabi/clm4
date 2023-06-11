@@ -35,6 +35,6 @@ export class ProductService {
 export interface Product {
   id: number;
   name: string;
-  price: number;
+  unitPrice: number;
   description: string;
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService, Product } from '../products.service';
 import { Observable } from 'rxjs';
+import { loremIpsum } from 'lorem-ipsum';
 
 @Component({
   selector: 'app-product-list',
@@ -10,7 +11,7 @@ import { Observable } from 'rxjs';
 export class ProductListComponent implements OnInit {
   products$: Observable<Product[]> | undefined;
   message: string = '';
-
+  lorem: string = loremIpsum();
   constructor(private productService: ProductService) { }
 
   ngOnInit() {
@@ -33,5 +34,8 @@ export class ProductListComponent implements OnInit {
   handleProductDeleted(message: string): void {
     this.message = message;
   }
-
+  msg: string = "";
+  handleMessage() {
+    this.msg = "Product has been created successfully";
+  }
 }

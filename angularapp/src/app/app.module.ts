@@ -18,19 +18,40 @@ import { DeleteProductComponent } from './delete-product/delete-product.componen
 import { MatButtonModule} from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 
+import { MatLegacyInputModule } from '@angular/material/legacy-input';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatBadgeModule } from '@angular/material/badge';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatLegacyMenuModule } from '@angular/material/legacy-menu';
+import { MatLegacyListModule } from '@angular/material/legacy-list';
+import { OrderListComponent } from './order-list/order-list.component';
+import { CreateOrderComponent } from './create-order/create-order.component';
+import { DeleteOrderComponent } from './delete-order/delete-order.component';
+import { UpdateOrderComponent } from './update-order/update-order.component';
+import { OrderDetailComponent } from './order-detail/order-detail.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
     AppComponent, HomeComponent, ProductListComponent, TopbarComponent, ProductAlertsComponent,
     ProductDetailsComponent, CartComponent, ShippingComponent, HomeComponent, CreateProductComponent,
     UpdateProductComponent,
-    DeleteProductComponent
+    DeleteProductComponent,
+    OrderListComponent,
+    CreateOrderComponent,
+    DeleteOrderComponent,
+    UpdateOrderComponent,
+    OrderDetailComponent
   ],
   imports: [
+    
+    MatLegacyListModule,
+    MatLegacyInputModule,
   BrowserModule,
   HttpClientModule,MatCardModule,
     ReactiveFormsModule,
-    FormsModule, MatButtonModule, 
+    FormsModule, MatButtonModule, BrowserAnimationsModule,
     RouterModule.forRoot([
     {
       path: '',

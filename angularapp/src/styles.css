@@ -122,7 +122,7 @@ app-top-bar {
     margin: 0;
   }
 
-/* Checkout Cart, Shipping Prices */
+/* Checkout Cart, Shipping UnitPrices */
 
 .cart-item, .shipping-item {
   width: 100%;

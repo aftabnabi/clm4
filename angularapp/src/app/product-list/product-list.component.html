@@ -1,31 +1,44 @@
 <h1>Products</h1>
+    <div *ngIf="products$ | async as products">
+         <div *ngFor="let product of products; index as productId">
+            <mat-card>
+                <mat-card-content>
+                    <span>{{ productId + 1 }}</span>
+                    <span>original id {{product.id}}</span>
+                    <mat-card-title>
+                        <a [title]="product.name + ' details'" [routerLink]="['/products', product.id]">
+                            {{ product.name }}
+                        </a>
+                    </mat-card-title>
+                    <p *ngIf="product.description">
+                        Description: {{ product.description }}
+                    </p>
+                    <div style="display: flex;align-items: flex-start;justify-content: space-around;margin: 0 10px;    ">
+                        <button (click)="share()">  Share </button>
+                        <a mat-raised-button [title]="product.name + ' details'" [routerLink]="['/update-product', product.id]"> edit it </a>
+                        <app-delete-product [productId]="product.id" [message]="message" (productDeleted)="reloadProducts()">delete</app-delete-product>
+                        <ng-container>
+                            <app-product-alerts [products]="product"></app-product-alerts>
+                        </ng-container>
+                    </div>
+                </mat-card-content>
+                <mat-divider></mat-divider>
+           </mat-card> </div>
+   </div>
+
+<mat-list>
+    <mat-list-item [ngStyle]="{backgroundColor: 'red' ,color: 'white' ,fontSize: '16px'}">
+        {{lorem}}+{{lorem}}{{lorem}}
+    </mat-list-item>
+    <mat-list-item>{{lorem}}</mat-list-item>
+    <mat-list-item>{{lorem}}</mat-list-item>
+    <mat-list-item>{{lorem}}</mat-list-item>
+</mat-list>
+
 <p>{{ message }}</p>
-<div *ngIf="products$ | async as products">
-  <div *ngFor="let product of products; index as productId">
-    <span>{{ productId + 1 }}</span>
-    <span>original id {{product.id}}</span>
-    <h3>
-      <a [title]="product.name + ' details'" [routerLink]="['/products', productId + 1]">
-        {{ product.name }}
-      </a>
-    </h3>
-
-    <p *ngIf="product.description">
-      Description: {{ product.description }}
-    </p>
-
-    <button (click)="share()">
-      Share
-    </button> update
-    <a [title]="product.name + ' details'" [routerLink]="['/update-product', product.id]">
-      edit it
-    </a>
-    <app-delete-product [productId]="product.id" [message]="message" (productDeleted)="reloadProducts()">delete</app-delete-product>
-
-  </div>
- 
-  <ng-container *ngFor="let product of products">
-    <app-product-alerts [products]="products"></app-product-alerts>
-  </ng-container>
-
-</div>
+<br />
+{{msg}}
+<app-create-product (msgevent)="handleMessage()">
+    create a product
+</app-create-product>
+<br />
