@@ -8,15 +8,15 @@ import { Observable } from 'rxjs';
   styleUrls: ['./product-alerts.component.css']
 })
 export class ProductAlertsComponent {
-  @Input() products: Product[] | undefined;
+  @Input() products: Product | undefined;
   @Output() notification: EventEmitter<any> = new EventEmitter();
 
   constructor(private productsService: ProductService) { }
 
   ngOnInit() {
     if (this.products) {
-      if (this.products[0].price > 700) {
-        this.notification.emit('Product price is greater than 700');
+      if (this.products.unitPrice > 700) {
+        this.notification.emit('Product UnitPrice is greater than 700');
       }
     }
   }

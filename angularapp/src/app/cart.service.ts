@@ -26,7 +26,7 @@ export class CartService {
     return this.items;
   }
 
-  getShippingPrices(): Observable<{ type: string; price: number }[]> {
-    return this.http.get<{ type: string; price: number }[]>('/assets/shipping.json');
+  getShippingUnitPrices(): Observable<{ type: string; unitPrice: number }[]> {
+    return this.http.get<{ type: string; unitPrice: number }[]>('/assets/shipping.json');
   }
 }

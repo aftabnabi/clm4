@@ -6,8 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-  msg: string = "";
-  handleMessage() {
-    this.msg = "Product has been created successfully";
-  }
+ 
 }

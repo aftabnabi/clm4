@@ -1,52 +1,177 @@
-<h1 class="mat-h1">Sample Page</h1>
+<h1 class="mat-h1">Welcome to Milk Sales CRM - Your All-in-One Solution for Managing Milk Sales and Customers</h1>
 
 <h2 class="mat-h2">Tables</h2>
-<table class="mat-table">
-  <tr class="mat-header-row">
-    <th class="mat-header-cell">Header 1</th>
-    <th class="mat-header-cell">Header 2</th>
-    <th class="mat-header-cell">Header 3</th>
-  </tr>
-  <tr class="mat-row">
-    <td class="mat-cell">Data 1</td>
-    <td class="mat-cell">Data 2</td>
-    <td class="mat-cell">Data 3</td>
-  </tr>
-  <tr class="mat-row">
-    <td class="mat-cell">Data 4</td>
-    <td class="mat-cell">Data 5</td>
-    <td class="mat-cell">Data 6</td>
-  </tr>
-</table>
-{{msg}}
-<a routerLink="/product-list">Product list</a>
-<app-create-product (msgevent)="handleMessage()">
-  create a product
-</app-create-product>
+<mat-card>
+  <table class="mat-table">
+    <tr class="mat-header-row">
+      <th class="mat-header-cell">Help or Support Information</th>
+      <th class="mat-header-cell">Provide contact details </th>
+      <th class="mat-header-cell">or links to resources</th>
+    </tr>
+    <tr class="mat-row">
+      <td class="mat-cell"> where users can find assistance or support for using the CRM system1</td>
+      <td class="mat-cell">This can include FAQs, user guides, or a dedicated support contact.</td>
+      <td class="mat-cell">If the milk sales shop runs any promotions or offers</td>
+    </tr>
+    <tr class="mat-row">
+      <td class="mat-cell"> highlight them on the front page.</td>
+      <td class="mat-cell">This can encourage customers to take</td>
+      <td class="mat-cell">advantage of special deals and increase sales.</td>
+    </tr>
+  </table>
+</mat-card>
+<br />
+<mat-card>
+  <h2 class="mat-h2">Milk Sales Statistics</h2>
+  <mat-card>
+    <ul class="mat-list">
+      <li class="mat-list-item">Display key milk sales statistics</li>
+      <li class="mat-list-item"> to provide an instant overview of the shop's performance</li>
+      <li class="mat-list-item">This can include total sales, daily/weekly/monthly sales trends,</li>
+      <li class="mat-list-item">top-selling products, and revenue generated.</li>
+    </ul>
+  </mat-card>
+</mat-card>
+<br/>
+<mat-card>
+  <h2 class="mat-h2">Quick Access Buttons</h2>
+<button class="mat-button" routerLink="/product-list">Products</button>
 
-<h2 class="mat-h2">Lists</h2>
-<ul class="mat-list">
-  <li class="mat-list-item">Item 1</li>
-  <li class="mat-list-item">Item 2</li>
-  <li class="mat-list-item">Item 3</li>
-</ul>
+<h2 class="mat-h2">Overview of the CRM System</h2>
+<p class="mat-body">Overview of the CRM System: Provide a brief description or overview of the CRM system, highlighting its key features and benefits. Explain how it can help the milk sales shop streamline operations, improve customer management, and increase efficiency..</p>
 
-<h2 class="mat-h2">Buttons</h2>
-<button class="mat-button">Click Me</button>
-
-<h2 class="mat-h2">Paragraphs</h2>
-<p class="mat-body">This is a sample paragraph.</p>
-
-<h2 class="mat-h2">Links</h2>
+<h2 class="mat-h2">Latest Orders or Activities</h2>
 <a href="https://www.example.com" class="mat-link">Visit Example.com</a>
 
 <h2 class="mat-h2">Text</h2>
-<p class="mat-body">Some text here.</p>
+<p class="mat-body">Include intuitive buttons or shortcuts to commonly used features or actions in the CRM system.</p>
+</mat-card>
+<br/>
+<mat-card>
+  <h2 class="mat-h2">Content</h2>
+  <div class="mat-content">
+    <h3 class="mat-subheading">Title</h3>
+    <p class="mat-body">This can include buttons for adding new customers, creating orders, managing products, generating reports, and accessing customer information..</p>
+  </div>
+</mat-card>
 
-<h2 class="mat-h2">Content</h2>
-<div class="mat-content">
-  <h3 class="mat-subheading">Title</h3>
-  <p class="mat-body">Some content goes here.</p>
-</div>
+<a routerLink="/product-list">Product list</a>
 
+
+<br/>
+<h1>Customer Testimonials</h1>
+<mat-card>
+  <div>
+    <h2>This is a card</h2>
+    <p>Show a list of the latest orders placed by customers or recent activities within the CRM system. This can give users a quick glance at the most recent sales and help them stay updated.</p>
+    <button>Click me!</button>
+    <img src="https://via.placeholder.com/350x150">
+    <ul>
+      <li>If available, showcase positive testimonials or feedback from satisfied customers.</li>
+      <li> This can help build trust and confidence in the milk sales shop and its CRM system.</li>
+      <li>This is another list item</li>
+      <li>This is the third list item</li>
+    </ul>
+    <mat-card>
+      <table>
+        <thead>
+          <tr>
+            <th>Column 1</th>
+            <th>Column 2</th>
+            <th>Column 3</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Row 1, Column 1</td>
+            <td>Row 1, Column 2</td>
+            <td>Row 1, Column 3</td>
+          </tr>
+          <tr>
+            <td>Row 2, Column 1</td>
+            <td>Row 2, Column 2</td>
+            <td>Row 2, Column 3</td>
+          </tr>
+          <tr>
+            <td>Row 3, Column 1</td>
+            <td>Row 3, Column 2</td>
+            <td>Row 3, Column 3</td>
+          </tr>
+        </tbody>
+      </table>
+    </mat-card>
+  </div>
+</mat-card>
+<br/>
+<mat-card>
+  <div class="mdc-card">
+    <h2>This is a card</h2>
+    <p>This is some text inside the card.</p>
+    <button>Click me!</button>
+    <img src="https://via.placeholder.com/350x150">
+    <ul>
+      <li>This is a list item</li>
+      <li>This is another list item</li>
+      <li>This is the third list item</li>
+    </ul>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Column 1</th>
+          <th>Column 2</th>
+          <th>Column 3</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Row 1, Column 1</td>
+          <td>Row 1, Column 2</td>
+          <td>Row 1, Column 3</td>
+        </tr>
+        <tr>
+          <td>Row 2, Column 1</td>
+          <td>Row 2, Column 2</td>
+          <td>Row 2, Column 3</td>
+        </tr>
+        <tr>
+          <td>Row 3, Column 1</td>
+          <td>Row 3, Column 2</td>
+          <td>Row 3, Column 3</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</mat-card>
+<br/>
+<mat-card>
+  <div class="mdc-card">
+    <h2>This is a card</h2>
+    <p>This is some text inside the card.</p>
+    <button>Click me!</button>
+    <img src="https://via.placeholder.com/350x150">
+    <ul>
+      <li>This is a list item</li>
+      <li>This is another list item</li>
+      <li>This is the third list item</li>
+    </ul>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Column 1</th>
+          <th>Column 2</th>
+          <th>Column 3</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Row 1, Column 1</td>
+          <td>Row 1, Column 2</td>
+          <td>Column 3</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</mat-card>
 

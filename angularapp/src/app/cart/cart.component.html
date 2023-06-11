@@ -4,7 +4,7 @@
 
 <div mat- class="cart-item" *ngFor="let item of items">
   <span>{{item.name}}</span>
-  <span>{{item.price | currency}}</span>
+  <span>{{item.unitPrice | currency}}</span>
 </div>
 
 <form [formGroup]="checkoutForm" ngSubmit="onSubmit()">
@@ -17,6 +17,6 @@
       <label for="address"></label>
       <input id="address" type="text" formControlName="address" placeholder="Address" />
     </div>
-  
-      <button mat-raised-button type="submit" class="button">Purchase</button>
+      <button mat-raised-button type="submit" class="button">Checkout</button>
+      <button class="mat-button" routerLink="/product-list">Add more items</button>
 </form>

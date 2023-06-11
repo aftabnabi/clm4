@@ -2,13 +2,16 @@
 
 <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
   <div>
-    <label for="name">Name:</label>
-    <input type="text" id="name" formControlName="name" required>
-  </div>
+    <label for="name">Name:</label><mat-form-field>
+    <input matInput type="text" id="name" formControlName="name" required>
+    </mat-form-field>
+</div>
 
   <div>
-    <label for="price">Price:</label>
-    <input type="number" id="price" formControlName="price" required>
+    <label for="UnitPrice">UnitPrice:</label>
+    <mat-form-field>
+        <input matInput type="number" id="UnitPrice" formControlName="UnitPrice" required>
+    </mat-form-field>
   </div>
 
   <div>

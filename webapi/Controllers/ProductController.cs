@@ -23,7 +23,7 @@ namespace webapi.Controllers
             {
                 Id = p.Id,
                 Name = p.Name,
-                Price = p.Price,
+                UnitPrice = p.UnitPrice,
                 Description = p.Description
             }).ToList();
 
@@ -44,7 +44,7 @@ namespace webapi.Controllers
             {
                 Id = product.Id,
                 Name = product.Name,
-                Price = product.Price,
+                UnitPrice = product.UnitPrice,
                 Description = product.Description
             };
 
@@ -58,7 +58,7 @@ namespace webapi.Controllers
             {
                 Id = product.Id,
                 Name = product.Name,
-                Price = product.Price,
+                UnitPrice = product.UnitPrice,
                 Description = product.Description
             };
 
@@ -80,7 +80,7 @@ namespace webapi.Controllers
             {
                 Id = id,
                 Name = product.Name,
-                Price = product.Price,
+                UnitPrice = product.UnitPrice,
                 Description = product.Description
             };
             _context.Entry(productDto).State = EntityState.Modified;

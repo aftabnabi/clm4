@@ -20,7 +20,7 @@ export class CreateProductComponent implements OnInit {
   ngOnInit() {
     this.productForm = this.formBuilder.group({
       name: ['', Validators.required],
-      price: ['', Validators.required],
+      UnitPrice: ['', Validators.required],
       description: ['', Validators.required]
     });
   }
@@ -46,7 +46,7 @@ export class CreateProductComponent implements OnInit {
   }
   clearForm() {
     this.productForm = this.formBuilder.group({
-      name: '', price: '', description:''
+      name: '', UnitPrice: '', description:''
     });
   }
 }
