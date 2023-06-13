@@ -24,7 +24,7 @@ export class UpdateProductComponent implements OnInit {
     this.productId = this.route.snapshot.params['Id'];
     this.productForm = this.formBuilder.group({
       name: ['', Validators.required],
-      UnitPrice: ['', Validators.required],
+      unitPrice: ['', Validators.required],
       description: ['', Validators.required]
     });
 
