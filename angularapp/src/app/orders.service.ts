@@ -9,11 +9,11 @@ export class OrderService {
   constructor(private http: HttpClient) { }
 
   getOrders(): Observable<Order[]> {
-    return this.http.get<Order[]>('/api/Orders');
+    return this.http.get<Order[]>('/api/Order');
   }
 
   getOrder(orderId: number): Observable<Order> {
-    return this.http.get<Order>(`/api/Orders/${orderId}`);
+    return this.http.get<Order>(`/api/Order/${orderId}`);
   }
   createOrder(order: Order): Observable<Order> {
     return this.http.post<Order>('/api/Orders', order);
@@ -33,18 +33,18 @@ export class OrderService {
 }
 
 export interface Order {
-  Id: number;
-  CustomerId: number;
-  EmployeeId: number;
-  OrderDate: Date;
-  RequiredDate: Date;
-  ShippedDate: Date;
-  ShipVia: string;
-  Freight: number;
-  ShipName: string;
-  ShipAddress: string;
-  ShipCity: string;
-  ShipRegion: string;
-  ShipPostalCode: number;
-  ShipCountry: string;
+  id: number;
+  customerId: number;
+  employeeId: number;
+  orderDate: Date;
+  requiredDate: Date;
+  shippedDate: Date;
+  shipVia: string;
+  freight: number;
+  shipName: string;
+  shipAddress: string;
+  shipCity: string;
+  shipRegion: string;
+  shipPostalCode: number;
+  shipCountry: string;
 }

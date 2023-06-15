@@ -96,6 +96,14 @@ import { MatInputModule } from '@angular/material/input';
     {
       path: 'update-product/:Id',
       component: UpdateProductComponent
+      },
+    {
+      path: 'order-list',
+      component: OrderListComponent
+      },
+    {
+      path: 'order-detail/:Id',
+      component: OrderDetailComponent
     },
     {
       path: '**',

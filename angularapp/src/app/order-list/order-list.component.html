@@ -3,24 +3,21 @@
 
 
 <mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
-    <ng-container matColumnDef="id">
-        <mat-header-cell *matHeaderCellDef mat-sort-header>ID</mat-header-cell>
-        <mat-cell *matCellDef="let element">{{ element.id }}</mat-cell>
+    
+
+    <ng-container matColumnDef="orderDate">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Order Date</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{ element.orderDate }}</mat-cell>
     </ng-container>
 
-    <ng-container matColumnDef="customer">
-        <mat-header-cell *matHeaderCellDef mat-sort-header>Customer</mat-header-cell>
-        <mat-cell *matCellDef="let element">{{ element.customer }}</mat-cell>
+    <ng-container matColumnDef="shipName">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Shipment Name</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{ element.shipName }}</mat-cell>
     </ng-container>
 
-    <ng-container matColumnDef="total">
-        <mat-header-cell *matHeaderCellDef mat-sort-header>Total</mat-header-cell>
-        <mat-cell *matCellDef="let element">{{ element.total }}</mat-cell>
-    </ng-container>
-
-    <ng-container matColumnDef="status">
-        <mat-header-cell *matHeaderCellDef mat-sort-header>Status</mat-header-cell>
-        <mat-cell *matCellDef="let element">{{ element.status }}</mat-cell>
+    <ng-container matColumnDef="shipCountry">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Shipment Country</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{ element.shipCountry }}</mat-cell>
     </ng-container>
 
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>

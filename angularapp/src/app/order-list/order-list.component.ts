@@ -10,9 +10,9 @@ import { OrderService } from '../orders.service';
   styleUrls: ['./order-list.component.css']
 })
 export class OrderListComponent implements OnInit {
-  dataSource: MatTableDataSource<any> = new MatTableDataSource<any>();
+  dataSource: MatTableDataSource<any>=new MatTableDataSource<any>();
 
-  displayedColumns = ['OrderDate', 'ShipName', 'ShipCountry'];
+  displayedColumns = ['orderDate', 'shipName', 'shipCountry'];
   filterString = '';
 
   @ViewChild(MatPaginator, { static: true }) paginator!: MatPaginator;
@@ -20,14 +20,14 @@ export class OrderListComponent implements OnInit {
 
   constructor(private orderService: OrderService) {
     
-      this.dataSource = new MatTableDataSource<any>();
+    /*  this.dataSource = new MatTableDataSource<any>();*/
     
 }
 
   ngOnInit() {
     // Fetch data from API and assign it to dataSource
     this.orderService.getOrders().subscribe(data => {
-      this.dataSource = new MatTableDataSource(data);
+      this.dataSource.data =  data;
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
     });
