@@ -18,7 +18,7 @@ import { DeleteProductComponent } from './delete-product/delete-product.componen
 import { MatButtonModule} from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 
-import { MatLegacyInputModule } from '@angular/material/legacy-input';
+
 import { MatDividerModule } from '@angular/material/divider';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -31,6 +31,11 @@ import { DeleteOrderComponent } from './delete-order/delete-order.component';
 import { UpdateOrderComponent } from './update-order/update-order.component';
 import { OrderDetailComponent } from './order-detail/order-detail.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatTable, MatTableModule } from '@angular/material/table';
+import { MatSortModule } from '@angular/material/sort';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatInputModule } from '@angular/material/input';
+
 
 @NgModule({
   declarations: [
@@ -45,13 +50,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     OrderDetailComponent
   ],
   imports: [
-    
-    MatLegacyListModule,
-    MatLegacyInputModule,
+  
   BrowserModule,
-  HttpClientModule,MatCardModule,
+  HttpClientModule,MatCardModule,MatInputModule,MatTableModule,
     ReactiveFormsModule,
-    FormsModule, MatButtonModule, BrowserAnimationsModule,
+    FormsModule, MatButtonModule, BrowserAnimationsModule,  MatPaginatorModule,
+    MatSortModule,
+    MatTableModule,
+    MatLegacyListModule,
+ 
     RouterModule.forRoot([
     {
       path: '',
@@ -89,6 +96,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     {
       path: 'update-product/:Id',
       component: UpdateProductComponent
+      },
+    {
+      path: 'order-list',
+      component: OrderListComponent
+      },
+    {
+      path: 'order-detail/:Id',
+      component: OrderDetailComponent
     },
     {
       path: '**',

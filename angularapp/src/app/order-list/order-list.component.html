@@ -1,1 +1,27 @@
-<p>order-list works!</p>
+<h1>Order List by the Customer</h1>
+
+
+
+<mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+    
+
+    <ng-container matColumnDef="orderDate">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Order Date</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{ element.orderDate }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="shipName">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Shipment Name</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{ element.shipName }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="shipCountry">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Shipment Country</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{ element.shipCountry }}</mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
+
+<mat-paginator showFirstLastButtons></mat-paginator>
